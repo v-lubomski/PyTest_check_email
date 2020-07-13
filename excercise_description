@@ -1,0 +1,40 @@
+Написать параметризированный тест с помощью PyTest, который проверяет, что входной
+список email является корректными email. Пример корректных email 'test@test.ru', 'w@w.com',
+'123QWE@mmm.mmm’.
+
+Написать параметризированный тест с помощью PyTest, который проверяет, что входной
+список email является некорректными email. Пример некорректных email 'test@test.', 'w@',
+'@tt’.
+
+Сделать фикстуру, которая передавать имя файла, в который будут писаться результаты
+тестов
+
+Имя файла задается в ini файле, дефолтное значение ‘log.txt’
+
+
+Example
+
+'''
+def valid_email(email):
+	"""
+	Check is email correct
+	:param email:
+	:return: bool
+	"""
+	import re
+	return bool(re.search(r"^[\w\.\+\-]+\@[\w]+\.[a-z]{2,3}$", email))
+def log(file_name, text):
+	"""
+	Write log to file
+	:param file_name:
+	:param text:
+	"""
+	with open(file_name, 'w') as f_obj:
+	f_obj.write(text)
+
+BEGIN
+
+YOUR CODE
+
+END
+'''
